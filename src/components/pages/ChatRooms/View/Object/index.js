@@ -396,6 +396,7 @@ class ChatRoomView extends EditableView {
       />
 
       editor = <NewMessage
+        cacheKey={`newMessage_room_${objectId}`}
         data={{
           Room: {
             connect: {

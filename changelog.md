@@ -1,3 +1,7 @@
+1.4.17
+=================================
+- Add cacheKey for new messages
+
 1.4.16
 =================================
 - Switch deleteManyNotices to deleteNotice
