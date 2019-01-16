@@ -17,7 +17,7 @@ import {
   TableView,
 } from '../../../../view/List';
 
-class ChatMessagesListView extends TableView {
+export class ChatMessagesListView extends TableView {
 
 
   static defaultProps = {
@@ -129,6 +129,11 @@ class ChatMessagesListView extends TableView {
 
   }
 
+}
+
+
+export {
+  styles,
 }
 
 

@@ -11,7 +11,7 @@ import { withStyles } from 'material-ui/styles';
 import PublicIcon from "material-ui-icons/Public";
 
 
-class ChatRoomsListView extends TableView {
+export class ChatRoomsListView extends TableView {
 
 
   static defaultProps = {
@@ -128,6 +128,10 @@ class ChatRoomsListView extends TableView {
 
 }
 
+
+export {
+  styles,
+}
 
 export default withStyles(styles)(props => <ChatRoomsListView
   {...props}

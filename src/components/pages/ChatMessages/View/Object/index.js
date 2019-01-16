@@ -11,7 +11,7 @@ import moment from "moment";
 import { Typography } from 'material-ui';
 import gql from 'graphql-tag';
 
-const styles = theme => {
+export const styles = theme => {
 
   return {
     root: {
@@ -25,7 +25,7 @@ const styles = theme => {
 }
 
 
-class ChatMessageView extends EditableView {
+export class ChatMessageView extends EditableView {
 
 
   static defaultProps = {

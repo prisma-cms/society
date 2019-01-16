@@ -20,7 +20,7 @@ import { Typography } from 'material-ui';
 import { NewMessage } from '../../../../../App';
 
 
-const styles = theme => {
+export const styles = theme => {
 
   return {
     root: {
@@ -56,7 +56,7 @@ const styles = theme => {
 
 
 
-class ChatRoomView extends EditableView {
+export class ChatRoomView extends EditableView {
 
 
   canEdit() {
