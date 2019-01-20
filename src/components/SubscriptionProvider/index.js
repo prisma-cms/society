@@ -34,12 +34,12 @@ export default class SubscriptionProvider extends Component {
 
     const {
       client,
-      user: currentUser,
+      // user: currentUser,
     } = this.context;
 
-    const {
-      id: currentUserId,
-    } = currentUser || {};
+    // const {
+    //   id: currentUserId,
+    // } = currentUser || {};
 
 
     if (!client) {
@@ -119,9 +119,9 @@ export default class SubscriptionProvider extends Component {
     subscriptions.push(chatMessageSub);
 
 
-    if (currentUserId) {
+    // if (currentUserId) {
 
-      const subscribeNotice = gql`
+    const subscribeNotice = gql`
         subscription notice{
           notice{
             mutation
@@ -132,27 +132,27 @@ export default class SubscriptionProvider extends Component {
         }
       `;
 
-      const noticeSub = await client
-        .subscribe({
-          query: subscribeNotice,
-          variables: {
-          },
-        })
-        .subscribe({
-          next: async (data) => {
+    const noticeSub = await client
+      .subscribe({
+        query: subscribeNotice,
+        variables: {
+        },
+      })
+      .subscribe({
+        next: async (data) => {
 
-            await this.reloadData();
+          await this.reloadData();
 
-          },
-          error(error) {
-            console.error('subscribeCalls callback with error: ', error)
-          },
-        });
+        },
+        error(error) {
+          console.error('subscribeCalls callback with error: ', error)
+        },
+      });
 
 
-      subscriptions.push(noticeSub);
+    subscriptions.push(noticeSub);
 
-    }
+    // }
 
 
 

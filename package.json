@@ -1,6 +1,6 @@
 {
   "name": "@prisma-cms/society",
-  "version": "1.4.18",
+  "version": "1.4.19",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
@@ -16,13 +16,14 @@
   "dependencies": {
     "@prisma-cms/context": "latest",
     "graphql": "14.0.2",
+    "react-chat-widget": "^2.1.4-1",
     "react-scroll": "^1.7.10"
   },
   "devDependencies": {
     "@prisma-cms/front": "latest",
     "@prisma-cms/server": "latest",
     "graphql-cli": "2.17.0",
-    "node-less-chokidar": "latest",
+    "node-less-chokidar": "^0.3.1",
     "nwb": "^0.23.0",
     "react-scripts": "2.1.2"
   },

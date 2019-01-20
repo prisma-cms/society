@@ -20,6 +20,7 @@ import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 import MainMenu from './MainMenu';
 
 import { withStyles } from 'material-ui';
+import UserPage from '../../components/pages/UsersPage/UserPage';
 
 
 const styles = theme => {
@@ -56,6 +57,10 @@ class DevRenderer extends PrismaCmsRenderer {
 
 
   getRoutes() {
+
+    const {
+      getQueryFragment,
+    } = this.context;
 
     let routes = super.getRoutes();
 
@@ -123,6 +128,28 @@ class DevRenderer extends PrismaCmsRenderer {
             {...props}
           />
         },
+      },
+      {
+        exact: true,
+        path: "/users/:userId",
+        render: (props) => {
+          const {
+            params,
+          } = props.match;
+
+          const {
+            userId,
+          } = params || {};
+
+          return <UserPage
+            key={userId}
+            getQueryFragment={getQueryFragment}
+            where={{
+              id: userId,
+            }}
+            {...props}
+          />
+        }
       },
       // {
       //   path: "*",
