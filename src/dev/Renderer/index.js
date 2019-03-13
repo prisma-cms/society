@@ -18,29 +18,33 @@ import App, {
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 
 import MainMenu from './MainMenu';
-
+import UserPage from '@prisma-cms/front/lib/modules/pages/UsersPage/UserPage';
 import { withStyles } from 'material-ui';
-import UserPage from '../../components/pages/UsersPage/UserPage';
 
 
-const styles = theme => {
+export const styles = {
+  root: {
+    fontSize: 16,
+    fontFamily: "serif",
+    height: "100%",
+    // border: "1px solid red",
+    display: "flex",
+    flexDirection: "column",
 
-  return {
-    root: {
-      // border: "1px solid",
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
+    "& #Renderer--body": {
+      flex: 1,
+      // border: "1px solid blue",
+      overflow: "auto",
 
-      "& #Renderer--body": {
-        flex: 1,
-        // border: "1px solid blue",
-        overflow: "auto",
+      "& a": {
+        "&, & span": {
+          color: "#0369ce",
+        },
       },
     },
-  };
-
+  },
 }
+
 
 class DevRenderer extends PrismaCmsRenderer {
 
@@ -164,7 +168,7 @@ class DevRenderer extends PrismaCmsRenderer {
 
     return <MainMenu />
   }
-
+  
 
   renderWrapper() {
 

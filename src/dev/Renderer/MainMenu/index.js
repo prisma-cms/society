@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Context from '@prisma-cms/context';
-
-import Grid from '@prisma-cms/front/lib/modules/ui/Grid';
+import Context from "@prisma-cms/context";
 
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
@@ -12,17 +10,39 @@ import Typography from 'material-ui/Typography';
 
 import { Link } from 'react-router-dom';
 
+import UserItem from './User';
 import { withStyles } from 'material-ui/styles';
 import { Notices } from '../../../App';
 
+// console.log("MainMenu Context", Context);
+
 // import Modal from './AuthModal';
 
-import {
-  styles,
-} from "@prisma-cms/front/lib/components/App/Renderer/MainMenu";
+export const styles = theme => {
 
-// import UserItem from './User';
-import UserItem from "@prisma-cms/front/lib/components/App/Renderer/MainMenu/User";
+
+  const {
+    palette: {
+      type: paletteType,
+    },
+  } = theme;
+
+
+  return {
+    root: {
+
+      // Fix contrast 
+      // "& a, & button": {
+      //   "&, & *": {
+      //     color: paletteType === "light" ? "#fff" : undefined,
+      //   },
+      // },
+    },
+    link: {
+      color: paletteType === "light" ? "#fff" : undefined,
+    },
+  }
+}
 
 export class MainMenu extends Component {
 
@@ -31,6 +51,12 @@ export class MainMenu extends Component {
   }
 
 
+  // static contextTypes = {
+  //   logout: PropTypes.func.isRequired,
+  //   onAuthSuccess: PropTypes.func.isRequired,
+  //   user: PropTypes.object,
+  //   openLoginForm: PropTypes.func.isRequired,
+  // }
   static contextType = Context;
 
   state = {
@@ -47,6 +73,10 @@ export class MainMenu extends Component {
 
   }
 
+  // componentWillMount(){
+  //   console.log("menu componentWillMount");
+  // }
+
   // handleClose = () => {
 
   //   this.setState({
@@ -60,6 +90,7 @@ export class MainMenu extends Component {
 
     const {
       user,
+      Grid,
     } = this.context;
 
     const {
@@ -208,7 +239,7 @@ export class MainMenu extends Component {
                   className={classes.link}
                 >
                   Signout
-              </Button>
+                </Button>
 
               </Grid>
             ]
