@@ -35,6 +35,10 @@ class ChatRoomsPage extends ListPage {
       },
     } = this.context;
 
+    const {
+      View,
+    } = this.props;
+
     this.Renderer = graphql(gql(chatRoomsConnection))(View);
 
     super.componentWillMount && super.componentWillMount();
@@ -72,7 +76,6 @@ class ChatRoomsPage extends ListPage {
         ...filters,
       }}
       {...this.getPaginationParams()}
-      {...other}
       addObject={() => {
         const {
           router: {
@@ -81,6 +84,7 @@ class ChatRoomsPage extends ListPage {
         } = this.context;
         history.push("/chat-rooms/create");
       }}
+      {...other}
     />
   }
 }
