@@ -80,7 +80,6 @@ class ChatRoom extends ObjectPage {
     } = this.props;
 
     return <Renderer
-      {...other}
       onSave={this.onSave}
       setPageMeta={object => {
 
@@ -96,6 +95,7 @@ class ChatRoom extends ObjectPage {
           status: id ? 200 : 404,
         })
       }}
+      {...other}
     />
   }
 }
