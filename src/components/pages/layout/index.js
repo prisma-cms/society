@@ -4,7 +4,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import PrismaCmsPageLayout from "@prisma-cms/front/lib/modules/pages/layout";
- 
+
 
 export default class PageLayout extends PrismaCmsPageLayout {
 
@@ -26,9 +26,11 @@ export default class PageLayout extends PrismaCmsPageLayout {
       first,
     }
   }
-  
+
 
   getFilters() {
+
+    return {}
 
     const {
       uri,
@@ -60,6 +62,7 @@ export default class PageLayout extends PrismaCmsPageLayout {
 
   setFilters(filters) {
 
+    return;
 
     const {
       uri,
