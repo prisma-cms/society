@@ -18,7 +18,7 @@ import App, {
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 
 import MainMenu from './MainMenu';
-import UserPage from '@prisma-cms/front/lib/modules/pages/UsersPage/UserPage';
+import UserPage from '@prisma-cms/front/lib/components/pages/UsersPage/UserPage';
 import { withStyles } from 'material-ui';
 
 

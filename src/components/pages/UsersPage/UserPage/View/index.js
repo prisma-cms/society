@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import UserPageViewProto from "@prisma-cms/front/lib/modules/pages/UsersPage/UserPage/View";
+import UserPageViewProto from "@prisma-cms/front/lib/components/pages/UsersPage/UserPage/View";
 
 import { ChatRooms } from '../../../../../App';
 
