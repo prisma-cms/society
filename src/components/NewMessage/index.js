@@ -58,7 +58,7 @@ class NewMessage extends PrismaCmsComponent {
       messageKey,
     } = this.state;
 
-    return (
+    return super.render(
       <ChatMessage
         key={messageKey}
         data={{
@@ -77,7 +77,7 @@ class NewMessage extends PrismaCmsComponent {
             ...other
           } = variables || {};
 
-          return this.mutate({
+          const result = await this.mutate({
             mutation: gql(createChatMessageProcessor),
             variables: {
               data: {
@@ -87,6 +87,16 @@ class NewMessage extends PrismaCmsComponent {
               ...other,
             },
           })
+            .catch(error => {
+
+              console.error("error", error);
+
+              return error;
+            });
+
+          // console.log("result", result);
+
+          return result;
         }}
         onSave={async result => {
 

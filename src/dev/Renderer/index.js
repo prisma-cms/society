@@ -16,10 +16,13 @@ import App, {
 } from "../../App";
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
+import Context from '@prisma-cms/context'
 
 import MainMenu from './MainMenu';
 import UserPage from '@prisma-cms/front/lib/components/pages/UsersPage/UserPage';
 import { withStyles } from 'material-ui';
+
+import * as queryFragments from "../../schema/generated/api.fragments";
 
 
 export const styles = {
@@ -168,16 +171,26 @@ class DevRenderer extends PrismaCmsRenderer {
 
     return <MainMenu />
   }
-  
+
 
   renderWrapper() {
 
-    return <ContextProvider>
-      <SubscriptionProvider>
-        {super.renderWrapper()}
-      </SubscriptionProvider>
-    </ContextProvider>;
+    return <Context.Consumer>
+      {context => {
 
+        return <Context.Provider
+          value={Object.assign(context, this.context, {
+            queryFragments,
+          })}
+        >
+          <ContextProvider>
+            <SubscriptionProvider>
+              {super.renderWrapper()}
+            </SubscriptionProvider>
+          </ContextProvider>
+        </Context.Provider>
+      }}
+    </Context.Consumer>
   }
 
 

@@ -20,6 +20,17 @@ export const styles = theme => {
       // display: "flex",
       // flexDirection: "column",
       padding: 10,
+
+      "& .DraftEditor-root": {
+
+        "& .public-DraftEditor-content": {
+
+          "&[contenteditable=true]": {
+            maxHeight: 250,
+            overflow: "auto",
+          },
+        },
+      },
     },
   }
 }

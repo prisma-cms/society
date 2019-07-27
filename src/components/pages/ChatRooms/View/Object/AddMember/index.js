@@ -132,7 +132,7 @@ class ChatRoomAddMember extends Component {
 
             } : undefined}
             onSelect={(value, item) => {
-              console.log("onSelect", value, item);
+              // console.log("onSelect", value, item);
               const {
                 id,
               } = item;
