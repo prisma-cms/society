@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import EditableView from "../../../../view/Object/Editable";
 
-import { withStyles, IconButton } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
+import IconButton from 'material-ui/IconButton';
 
 import ExitIcon from "material-ui-icons/ExitToApp";
 import JoinIcon from "material-ui-icons/GroupAdd";
@@ -16,7 +17,7 @@ import PublicIcon from "material-ui-icons/Public";
 
 import gql from 'graphql-tag';
 
-import { Typography } from 'material-ui';
+import Typography from 'material-ui/Typography';
 import { NewMessage } from '../../../../../App';
 
 

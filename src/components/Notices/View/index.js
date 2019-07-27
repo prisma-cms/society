@@ -13,17 +13,14 @@ import { withStyles } from 'material-ui/styles';
 
 import NotificationsIcon from "material-ui-icons/Notifications";
 import NotificationsActiveIcon from "material-ui-icons/NotificationsActive";
-import { IconButton, ListItem, CircularProgress } from 'material-ui';
-// import { ListItemAvatar } from 'material-ui';
-import { ListItemText } from 'material-ui';
-import { ListItemSecondaryAction } from 'material-ui';
-import { ListItemIcon } from 'material-ui';
-import { List } from 'material-ui';
+import IconButton from 'material-ui/IconButton';
+import ListItem from 'material-ui/List/ListItem';
+import CircularProgress from 'material-ui/Progress/CircularProgress';
+
+import List, { ListItemText, ListItemSecondaryAction, ListItemIcon } from 'material-ui/List';
 
 import DeleteIcon from "material-ui-icons/Delete";
 import MessageIcon from "material-ui-icons/Message";
-
-// import { Avatar } from 'material-ui';
 
 import PrismaCmsComponent from "@prisma-cms/component";
 

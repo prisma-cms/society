@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import EditableView from "../../../../view/Object/Editable";
 
-import { withStyles, IconButton, CircularProgress, Paper } from 'material-ui';
+import Paper from 'material-ui/Paper';
+import withStyles from 'material-ui/styles/withStyles';
 
 import SendIcon from "material-ui-icons/Send";
-import LinkIcon from "material-ui-icons/Link";
+// import LinkIcon from "material-ui-icons/Link";
 import moment from "moment";
-import { Typography } from 'material-ui';
+import Typography from 'material-ui/Typography';
 import gql from 'graphql-tag';
 
 export const styles = theme => {

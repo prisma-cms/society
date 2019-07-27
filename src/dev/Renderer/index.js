@@ -20,9 +20,10 @@ import Context from '@prisma-cms/context'
 
 import MainMenu from './MainMenu';
 import UserPage from '@prisma-cms/front/lib/components/pages/UsersPage/UserPage';
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 import * as queryFragments from "../../schema/generated/api.fragments";
+import DevMainPage from './pages/MainPage';
 
 
 export const styles = {
@@ -75,7 +76,7 @@ class DevRenderer extends PrismaCmsRenderer {
       {
         exact: true,
         path: "/",
-        component: App,
+        component: DevMainPage,
       },
       {
         exact: true,
@@ -183,6 +184,8 @@ class DevRenderer extends PrismaCmsRenderer {
             queryFragments,
           })}
         >
+          {this.renderMenu()}
+
           <ContextProvider>
             <SubscriptionProvider>
               {super.renderWrapper()}

@@ -11,9 +11,10 @@ import {
 
 import ChatMessage from "../../../../../ChatMessages/View/Object";
 
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import { Button } from 'material-ui';
+// import * as Scroll from 'react-scroll';
+// import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll'
+
 import gql from 'graphql-tag';
 
 export const styles = theme => {

@@ -1,5 +1,8 @@
+1.5.0
 =================================
+- Upgrade boilerplate
 - Fix NewMessage
+- Cleanup material-ui
 
 1.4.23
 =================================

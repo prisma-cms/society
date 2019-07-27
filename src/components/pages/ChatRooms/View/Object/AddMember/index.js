@@ -5,7 +5,7 @@ import Context from "@prisma-cms/context";
 
 import gql from 'graphql-tag';
 
-import { IconButton } from "material-ui";
+import IconButton from "material-ui/IconButton";
 import AddIcon from "material-ui-icons/PersonAdd";
 import CloseIcon from "material-ui-icons/Undo";
 

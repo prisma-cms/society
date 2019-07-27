@@ -77,7 +77,7 @@ class NewMessage extends PrismaCmsComponent {
             ...other
           } = variables || {};
 
-          const result = await this.mutate({
+          return this.mutate({
             mutation: gql(createChatMessageProcessor),
             variables: {
               data: {
@@ -87,16 +87,16 @@ class NewMessage extends PrismaCmsComponent {
               ...other,
             },
           })
-            .catch(error => {
+            // .catch(error => {
 
-              console.error("error", error);
+            //   console.error("error", error);
 
-              return error;
-            });
+            //   return error;
+            // });
 
           // console.log("result", result);
 
-          return result;
+          // return result;
         }}
         onSave={async result => {
 
