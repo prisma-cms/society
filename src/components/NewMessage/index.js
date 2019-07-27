@@ -50,6 +50,7 @@ class NewMessage extends PrismaCmsComponent {
     const {
       data,
       onSave,
+      _dirty,
       ...other
     } = this.props;
 
@@ -58,14 +59,14 @@ class NewMessage extends PrismaCmsComponent {
       messageKey,
     } = this.state;
 
-    return super.render(
+    return (
       <ChatMessage
         key={messageKey}
         data={{
           object: {
           },
         }}
-        _dirty={{}}
+        _dirty={_dirty || {}}
         mutate={async ({
           variables,
         }) => {
@@ -87,12 +88,12 @@ class NewMessage extends PrismaCmsComponent {
               ...other,
             },
           })
-            // .catch(error => {
+            .catch(error => {
 
-            //   console.error("error", error);
+              // console.error("error", error);
 
-            //   return error;
-            // });
+              return error;
+            });
 
           // console.log("result", result);
 
