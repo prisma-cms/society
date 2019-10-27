@@ -1,6 +1,5 @@
 
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import { PureComponent } from 'react'
 
 import gql from "graphql-tag";
 
@@ -177,11 +176,14 @@ export default class SubscriptionProvider extends PureComponent {
 
         subscriptions.map(n => {
           n.unsubscribe();
+          return null;
         });
 
         Object.assign(this.state, {
           subscriptions: [],
         });
+
+        return null;
 
       }
 
@@ -196,12 +198,24 @@ export default class SubscriptionProvider extends PureComponent {
 
     const {
       client,
-      loadApiData,
+      // loadApiData,
     } = this.context;
 
-    await loadApiData();
+    // await loadApiData();
 
-    await client.reFetchObservableQueries();
+    // await client.reFetchObservableQueries();
+
+
+    if (!client.queryManager.fetchQueryRejectFns.size) {
+
+      // console.log("client", client);
+
+      return await client.resetStore()
+        .catch(error => {
+          console.error(error);
+        });
+
+    }
 
   }
 
@@ -210,10 +224,10 @@ export default class SubscriptionProvider extends PureComponent {
 
     const {
       children,
-      user,
-      client,
-      loadApiData,
-      ...other
+      // user,
+      // client,
+      // loadApiData,
+      // ...other
     } = this.props;
 
     return children;
