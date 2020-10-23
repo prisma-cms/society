@@ -1,3 +1,8 @@
+1.6.0
+=================================
+- Remove styles due styled-components compatibility
+  https://err.sh/next.js/css-npm
+
 1.5.2
 =================================
 - Fix subscriptions

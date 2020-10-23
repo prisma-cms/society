@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import UserPageViewProto from "@prisma-cms/front/lib/components/pages/UsersPage/UserPage/View";
 
 import { ChatRooms } from '../../../../../App';
 
-import { Widget } from 'react-chat-widget';
-
-import 'react-chat-widget/lib/styles.css';
+// import 'react-chat-widget/lib/styles.css';
 
 class UserPageView extends UserPageViewProto {
 
